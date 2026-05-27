@@ -1,0 +1,31 @@
+{
+  "name": "crypto-whale-watcher",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.11.0",
+  "description": "Crypto Whale Watcher — monorepo",
+  "author": "Yehor Tsukanov",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm -r --parallel run dev",
+    "dev:api": "pnpm --filter api run start:dev",
+    "dev:web": "pnpm --filter web run dev",
+    "build": "pnpm -r run build",
+    "build:api": "pnpm --filter api run build",
+    "build:web": "pnpm --filter web run build",
+    "lint": "pnpm -r run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,mjs,json,md,css}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,mjs,json,md,css}\"",
+    "test": "pnpm -r run test",
+    "test:cov": "pnpm -r run test:cov",
+    "clean": "pnpm -r exec rm -rf dist .next out coverage node_modules/.cache"
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3"
+  }
+}

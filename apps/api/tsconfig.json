@@ -1,0 +1,8 @@
+{
+  "extends": "@crypto-whale-watcher/typescript-config/nestjs.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": "./"
+  },
+  "include": ["src/**/*", "test/**/*"]
+}
