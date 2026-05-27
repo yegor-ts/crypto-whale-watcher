@@ -14,9 +14,10 @@ import { SearchHistory } from './search-history/search-history.entity';
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
         type: 'postgres',
-        url: configService.get<string>('DATABASE_URL'),
+        url: configService.get<string>('DATABASE_URL') || process.env.DATABASE_URL,
         entities: [SearchHistory],
         synchronize: true,
+        ssl: process.env.DATABASE_URL ? { rejectUnauthorized: false } : false,
       }),
       inject: [ConfigService],
     }),
